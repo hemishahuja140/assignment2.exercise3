@@ -3,7 +3,7 @@
 #' and begin
 #' @param Arrivals what time the customer arrives
 #' @param ServiceTimes how long the service takes
-#' @param NumServers number of servers (defualt at 1)
+#' @param NumServers number Of servers (defualt at 1)
 #'
 #' @return Data-frame that shows what time the customer's service starts and ends
 #' @export
@@ -42,7 +42,7 @@ Multiserver <- function(Arrivals, ServiceTimes, NumServers = 1) {
     # server becomes available again after serving ith customer
     AvailableFrom[ChosenServer[i]] <- ServiceEnds[i]
   }
-  out <- data.frame(Arrivals, ServiceBegins, ChosenServer, ServiceEnds)
+  out <- tibble(Arrivals, ServiceBegins, ChosenServer, ServiceEnds)
   return(out)
 }
 
