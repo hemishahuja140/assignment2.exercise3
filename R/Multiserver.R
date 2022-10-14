@@ -42,7 +42,7 @@ Multiserver <- function(Arrivals, ServiceTimes, NumServers = 1) {
     # server becomes available again after serving ith customer
     AvailableFrom[ChosenServer[i]] <- ServiceEnds[i]
   }
-  out <- tibble(Arrivals, ServiceBegins, ChosenServer, ServiceEnds)
+  out <- tibble::tibble(Arrivals, ServiceBegins, ChosenServer, ServiceEnds)
   return(out)
 }
 
